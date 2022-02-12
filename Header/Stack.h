@@ -5,9 +5,9 @@
 
 typedef struct stack
 {
-	Node * head;
-	int push;
-	int poped;
+	SLNode * head;
+	int toPush;
+	int popped;
 	int size;
 } Stack;
 

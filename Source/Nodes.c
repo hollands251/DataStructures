@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "Header/Nodes.h"
 
 SLNode * makeSinglyLinkedNode( SLNode * node , int payload )
 {
@@ -10,6 +11,7 @@ SLNode * makeSinglyLinkedNode( SLNode * node , int payload )
 
 	return newNode;
 }
+
 
 SLNode * freeSinglyLinkednode( SLNode * node )
 {
