@@ -20,4 +20,4 @@ typedef struct multiLinkedNode
 SLNode * makeSinglyLinkedNode( SLNode * node , void * payload );
 SLNode * freesinglyLinkedNode( SLNode * node );
 
-#else
+#endif
