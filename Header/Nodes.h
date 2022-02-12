@@ -3,7 +3,7 @@
 
 typedef struct singlyLinkedNode
 {
-    void * payload;
+    int payload;
     singlyLinkedNode * nextNode;
 } SLNode_t;
 
