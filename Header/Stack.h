@@ -6,14 +6,13 @@
 typedef struct stack
 {
 	SLNode * head;
-	int toPush;
 	int popped;
 	int size;
 } Stack;
 
 Stack * makeStack();
 Stack * freeStack();
-Stack * push( Stack * stack , int * pointer );
+Stack * push( Stack * stack , int pointer );
 Stack * pop( Stack * stack );
 
 #endif

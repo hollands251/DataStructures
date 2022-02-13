@@ -18,7 +18,9 @@ Stack * makeStack()
 Stack * freeStack( Stack * stack )
 {
 	for ( int i = 0 ; i < stack -> size ; i++ )
+	{
 		stack -> head = freeSLNode( stack -> head );
+	}
 
 	free( stack );
 
@@ -26,6 +28,24 @@ Stack * freeStack( Stack * stack )
 }
 
 
-Stack * push( Stack -> stack , int payload )
+Stack * push( Stack * stack , int payload )
 {
+	SLNode * newHead 	= malloc( sizeof(SLNode) );
+	newHead -> nextNode  	= stack -> head;
+	newHead -> payload	= payload;
+	stack -> head		= newHead;
+
+	return stack;
+}
+
+
+Stack * pop( Stack * stack )
+{
+	SLNode * deprecatedNode = stack -> head;
+	stack -> head 		= deprecatedNode -> nextNode;
+	stack -> popped		= deprecatedNode -> payload;
+
+	free( deprecatedNode );
+
+	return stack;
 }
