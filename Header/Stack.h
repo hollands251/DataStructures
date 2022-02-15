@@ -1,18 +1,18 @@
 #ifndef _STACK_H
 #define _STACK_H
 
-#include "nodes.h"
+#include "Nodes.h"
 
 typedef struct stack
 {
-	SLNode * head;
+	SLNode_t * head;
 	int popped;
 	int size;
-} Stack;
+} Stack_t;
 
-Stack * makeStack();
-Stack * freeStack();
-Stack * push( Stack * stack , int pointer );
-Stack * pop( Stack * stack );
+Stack_t * makeStack();
+Stack_t * freeStack();
+Stack_t * push( Stack_t * stack , int pointer );
+Stack_t * pop( Stack_t * stack );
 
 #endif

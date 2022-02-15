@@ -3,9 +3,9 @@
 
 #include "Header/Nodes.h"
 
-SLNode * makeSinglyLinkedNode( SLNode * node , int payload )
+SLNode_t * makeSinglyLinkedNode( SLNode_t * node , int payload )
 {
-	SLNode * newNode 	= malloc( sizeof(SLNode) );
+	SLNode_t * newNode 	= malloc( sizeof(SLNode_t) );
 	newNode -> payload	= payload;
 	newNode -> nextNode	= node;
 
@@ -13,10 +13,10 @@ SLNode * makeSinglyLinkedNode( SLNode * node , int payload )
 }
 
 
-SLNode * freeSinglyLinkednode( SLNode * node )
+SLNode_t * freeSinglyLinkednode( SLNode_t * node )
 {
-	nodeToFree 	= node;
-	node 		= node -> nextNode;
+	SLNode_t * nodeToFree 	= node;
+	node 			= node -> nextNode;
 	
 	free( nodeToFree );
 

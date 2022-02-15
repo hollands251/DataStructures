@@ -4,7 +4,7 @@
 typedef struct singlyLinkedNode
 {
     int payload;
-    singlyLinkedNode * nextNode;
+    struct singlyLinkedNode * nextNode;
 } SLNode_t;
 
 typedef struct doublyLinkedNode
@@ -15,9 +15,9 @@ typedef struct doublyLinkedNode
 typedef struct multiLinkedNode
 {
     
-} SLNode_t;
+} MLNode_t;
 
-SLNode * makeSinglyLinkedNode( SLNode * node , void * payload );
-SLNode * freesinglyLinkedNode( SLNode * node );
+SLNode_t * makeSinglyLinkedNode( SLNode_t * node , int payload );
+SLNode_t * freeSinglyLinkedNode( SLNode_t * node );
 
 #endif

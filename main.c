@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-#include "Source/Stack.h"
+#include "Source/Stack.c"
 
 int main()
 {
-	Stack * stack = makeStack();
+	Stack_t * stack = makeStack();
 
 	stack = push( stack , 5 );
 	stack = pop( stack );

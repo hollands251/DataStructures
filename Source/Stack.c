@@ -4,22 +4,22 @@
 #include "Header/Stack.h"
 #include "Header/Nodes.h"
 
-Stack * makeStack()
+Stack_t * makeStack()
 {
-	Stack * stack 	= malloc( sizeof(Stack) );
+	Stack_t * stack 	= malloc( sizeof(Stack_t) );
 	stack -> head 	= NULL;
-	stack -> push 	= NULL;
-	stack -> popped	= NULL;
+	stack -> popped	= 0;
+	stack -> size	= 0;
 
 	return stack;
 }
 
 
-Stack * freeStack( Stack * stack )
+Stack_t * freeStack( Stack_t * stack )
 {
 	for ( int i = 0 ; i < stack -> size ; i++ )
 	{
-		stack -> head = freeSLNode( stack -> head );
+		stack -> head = freeSinglyLinkedNode( stack -> head );
 	}
 
 	free( stack );
@@ -28,22 +28,24 @@ Stack * freeStack( Stack * stack )
 }
 
 
-Stack * push( Stack * stack , int payload )
+Stack_t * push( Stack_t * stack , int payload )
 {
-	SLNode * newHead 	= malloc( sizeof(SLNode) );
+	SLNode_t * newHead 	= malloc( sizeof(SLNode_t) );
 	newHead -> nextNode  	= stack -> head;
 	newHead -> payload	= payload;
 	stack -> head		= newHead;
+	stack -> size		= ( stack->size += 1 );
 
 	return stack;
 }
 
 
-Stack * pop( Stack * stack )
+Stack_t * pop( Stack_t * stack )
 {
-	SLNode * deprecatedNode = stack -> head;
-	stack -> head 		= deprecatedNode -> nextNode;
-	stack -> popped		= deprecatedNode -> payload;
+	SLNode_t * deprecatedNode 	= stack -> head;
+	stack -> head 			= deprecatedNode -> nextNode;
+	stack -> popped			= deprecatedNode -> payload;
+	stack -> size		= ( stack->size -= 1 );
 
 	free( deprecatedNode );
 
