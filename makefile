@@ -30,8 +30,8 @@ CleanStack:
 # Make Node Option
 ########################################################################
 
-NodeSourceFiles=Node/Nodes.c
-NodeObjectFiles=Node/Nodes.o
+NodeSourceFiles=Source/Nodes.c
+NodeObjectFiles=Object/Nodes.o
 
 ObjectFileLocation=Object/Nodes.o
 BinaryFileLocation=Binary/Nodes
