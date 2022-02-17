@@ -20,8 +20,8 @@ AssembleStack:
 	$(CC) -Wall -c 	$(StackSourceFiles) -o Object/Stack.o
 
 CleanStack:
-	rm Binary/Stack
 	rm Object/Stack.o
+	rm Binary/Stack
 
 ########################################################################
 
@@ -48,7 +48,7 @@ AssembleNode:
 	$(CC) -Wall -c	$(NodeSourceFiles) -o $(ObjectFileLocation)
 
 CleanNode:
-	rm Binary/Node
 	rm Object/Node.o
+	rm Binary/Node
 
 ########################################################################

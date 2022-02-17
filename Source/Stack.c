@@ -1,8 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef	_STACK_C
+#define _STACK_C
 
+#include <stdlib.h>
 #include "Header/Stack.h"
-#include "Header/Nodes.h"
+#include "Nodes.c"
 
 Stack_t * makeStack()
 {
@@ -45,9 +46,11 @@ Stack_t * pop( Stack_t * stack )
 	SLNode_t * deprecatedNode 	= stack -> head;
 	stack -> head 			= deprecatedNode -> nextNode;
 	stack -> popped			= deprecatedNode -> payload;
-	stack -> size		= ( stack->size -= 1 );
+	stack -> size			= ( stack->size -= 1 );
 
 	free( deprecatedNode );
 
 	return stack;
 }
+
+#endif
