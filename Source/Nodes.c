@@ -1,6 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef _NODES_C
+#define	_NODES_C
 
+#include <stdlib.h>
 #include "Header/Nodes.h"
 
 SLNode_t * makeSinglyLinkedNode( SLNode_t * node , int payload )
@@ -13,7 +14,7 @@ SLNode_t * makeSinglyLinkedNode( SLNode_t * node , int payload )
 }
 
 
-SLNode_t * freeSinglyLinkednode( SLNode_t * node )
+SLNode_t * freeSinglyLinkedNode( SLNode_t * node )
 {
 	SLNode_t * nodeToFree 	= node;
 	node 			= node -> nextNode;
@@ -22,3 +23,5 @@ SLNode_t * freeSinglyLinkednode( SLNode_t * node )
 
 	return node;
 }
+
+#endif
