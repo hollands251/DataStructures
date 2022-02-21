@@ -20,7 +20,7 @@ Stack_t * freeStack( Stack_t * stack )
 {
 	for ( int i = 0 ; i < stack -> size ; i++ )
 	{
-		stack -> head = freeSinglyLinkedNode( stack -> head );
+            stack = pop( stack );
 	}
 
 	free( stack );
@@ -44,11 +44,9 @@ Stack_t * push( Stack_t * stack , int payload )
 Stack_t * pop( Stack_t * stack )
 {
 	SLNode_t * deprecatedNode 	= stack -> head;
-	stack -> head 			= deprecatedNode -> nextNode;
 	stack -> popped			= deprecatedNode -> payload;
+	stack -> head 			= freeSinglyLinkedNode( deprecatedNode ); 
 	stack -> size			= ( stack->size -= 1 );
-
-	free( deprecatedNode );
 
 	return stack;
 }
