@@ -24,8 +24,7 @@ Queue_t * freeQueue( Queue_t * queue )
         queue = dequeue( queue );
     }
 
-    freeSinglyLinkedNode( queue -> head );
-    freeSinglyLinkedNode( queue -> head );
+    freeSinglyLinkedNode( queue -> tail );
     free( queue );
 
     return NULL;
