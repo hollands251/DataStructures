@@ -8,7 +8,7 @@
 Stack_t * makeStack()
 {
 	Stack_t * stack 	= malloc( sizeof(Stack_t) );
-	stack -> head 	= NULL;
+	stack -> head 	= makeSinglyLinkedNode( NULL , 0 );
 	stack -> popped	= 0;
 	stack -> size	= 0;
 
@@ -23,6 +23,7 @@ Stack_t * freeStack( Stack_t * stack )
             stack = pop( stack );
 	}
 
+	freeSinglyLinkedNode( stack -> head );
 	free( stack );
 
 	return NULL;
